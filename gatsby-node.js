@@ -14,8 +14,18 @@ exports.createPages = ({ graphql, actions }) => {
             }
           }
         }
-      }
+        allDatoCmsCategory {
+          edges {
+            node {
+              slug
+              name
+            }
+          }
+        }
+      }      
     `).then(result => {
+
+
       result.data.allDatoCmsWork.edges.map(({ node: work }) => {
         createPage({
           path: `works/${work.slug}`,
@@ -24,7 +34,18 @@ exports.createPages = ({ graphql, actions }) => {
             slug: work.slug,
           },
         })
-      })
+      });
+
+      result.data.allDatoCmsCategory.edges.map(({ node: category }) => {
+        createPage({
+          path: `best/${category.slug}`,
+          component: path.resolve(`./src/templates/category.js`),
+          context: {
+            slug: category.slug,
+          },
+        })
+      });
+
       resolve()
     })
   })

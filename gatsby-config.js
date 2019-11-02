@@ -5,7 +5,9 @@ module.exports = {
     title: `Creative Portfolio`,
   },
   plugins: [
+
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-styled-components`,
     `gatsby-plugin-sass`,
     `gatsby-transformer-remark`,
     {
@@ -13,6 +15,7 @@ module.exports = {
       options: {
         apiToken: process.env.DATO_API_TOKEN,
       },
-    },
+
+    }
   ],
 }
