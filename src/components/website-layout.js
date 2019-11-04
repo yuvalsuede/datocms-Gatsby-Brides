@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {StaticQuery, graphql} from "gatsby"
+import Header from "./header";
 
 const WebsiteWrapper = ({children}) => (
     <StaticQuery query={graphql`
@@ -18,9 +19,12 @@ const WebsiteWrapper = ({children}) => (
     }
   `}
                  render={data => (
-                     <div className="container">
-                         {children}
-                     </div>
+                     <>
+                         <Header siteTitle={data.datoCmsSite.globalSeo.siteName}/>
+                         <div className="container">
+                             {children}
+                         </div>
+                     </>
                  )}
     />
 )

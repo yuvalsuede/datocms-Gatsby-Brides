@@ -3,8 +3,8 @@ import PropTypes from "prop-types"
 import React from "react"
 import styled from "@emotion/styled"
 import LogoImg from "../assets/images/logo_transparent_background.png"
-import dimensions from "../styles/dimensions"
-import colors from "../styles/colors"
+import dimensions from "../constants/dimensions"
+import colors from "../constants/colors"
 import { SvgIcon } from "@material-ui/core"
 
 const HeaderContainer = styled.header`
@@ -38,7 +38,7 @@ const HeaderLinks = styled.div`
         grid-gap: 5.5em;
     }
 
-    @media(max-width: ${dimensions.maxwidthMobile}px) {
+    @media(max-width: ${dimensions.minwidthDesktop}px) {
         grid-gap: 2.5em;
     }
 
@@ -100,6 +100,7 @@ const Header = ({ siteTitle }) => (
                 <Logo src={LogoImg} alt="Brides.il"/>
             </Link>
             <HeaderLinks>
+                {siteTitle}
                 <InstagramIcon />
             </HeaderLinks>
         </HeaderContent>
