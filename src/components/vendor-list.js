@@ -5,6 +5,35 @@ import Vendor from "./vendor";
 import colors from "../constants/colors";
 import {mq} from "../constants/dimensions"; // to take image data and render it
 
+
+const ChartHeader = styled.div`
+    --p: 15px;
+    padding: 0 var(--p);
+    position: relative;
+&:before,
+&:after {
+    background-color: inherit;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    top: calc(var(--p)/2);
+    width: var(--p);
+    filter: brightness(.5);
+    z-index: -1;
+}
+
+&:before {
+    left: 0;
+    transform: skewy(45deg);
+}
+
+&:after {
+    right: 0;
+    transform: skewy(-45deg);
+}
+`
+
 const ChartWrapper = styled.div`
     display: flex;
     flex-direction: column;
@@ -23,9 +52,13 @@ const VendorList = (props) => {
         <ChartWrapper
             css={{
                 display: "flex",
-                alignItems: "center"
+                alignItems: "center",
+                [mq[0]]: {
+                    display: 'flex',
+                    alignItems: 'flex-start'
+                }
             }}>
-             <Card
+            <ChartHeader
                 raised={true}
                 css={{
                     maxWidth: "800px",
@@ -44,14 +77,13 @@ const VendorList = (props) => {
                     [mq[0]]: {
                         textAlign: 'center',
                         justifyContent: 'center',
-                        fontSize: '14px'
+                        fontSize: '14px',
+                        boxSizing: 'border-box'
                     }
                 }}
             ><span
-                 css={{
-
-                 }}
-             > Brides.il הנבחרת של</span></Card>
+                css={{}}
+            > Brides.il הנבחרת של</span></ChartHeader>
 
             {props.vendors.edges.map(({node}) => (
                 <Card
@@ -65,7 +97,8 @@ const VendorList = (props) => {
                         maxWidth: "800px",
                         width: "100%",
                         borderBottom: '1px solid #ffddf4',
-                        boxShadow: 'none'
+                        boxShadow: 'none',
+                        boxSizing: 'border-box'
 
                     }}
                 >

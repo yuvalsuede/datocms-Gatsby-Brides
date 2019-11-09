@@ -40,8 +40,8 @@ const Avatar = (props) => {
     return (
         <div
             css={{
-                height: '80px',
-                width: '80px',
+                height: '100px',
+                width: '100px !important',
                 margin: '10px 0'
             }}
         >
@@ -119,7 +119,7 @@ const Vendor = (props) => (
                 display: 'flex',
                 flexDirection: 'row',
                 maxWidth: '500px',
-                    [mq[0]] : {
+                [mq[0]] : {
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'center',
