@@ -1,7 +1,7 @@
 import React from "react"
 import Img from "gatsby-image"
 import styled from "@emotion/styled" // to take image data and render it
-import dimensions from "../constants/dimensions"
+import dimensions, {mq} from "../constants/dimensions"
 
 const HeroWrapper = styled.div`
   height: 300px;
@@ -66,8 +66,26 @@ const Hero = (props) => {
                 alt="Brides.il"
                 style={ ImgStyle } />
             <HeroHeader>
-                <h1>{props.topDescription}</h1>
-                <h2>{props.topLongDescription}</h2>
+                <h1
+                css={{
+                    [mq[0]]: {
+                        textAlign: 'center',
+                        justifyContent: 'center',
+                        fontSize: '20px !important'
+                    }
+                }}
+                >{props.topDescription}</h1>
+                <h2
+                    css={{
+                        [mq[0]]: {
+                            textAlign: 'center',
+                            justifyContent: 'center',
+                            fontSize: '14px !important',
+                            width: '50%',
+                            margin: '0 auto'
+                        }
+                    }}
+                >{props.topLongDescription}</h2>
             </HeroHeader>
 
         </HeroWrapper>

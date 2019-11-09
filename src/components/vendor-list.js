@@ -2,7 +2,8 @@ import React from "react"
 import styled from "@emotion/styled"
 import {Card} from "@material-ui/core";
 import Vendor from "./vendor";
-import colors from "../constants/colors"; // to take image data and render it
+import colors from "../constants/colors";
+import {mq} from "../constants/dimensions"; // to take image data and render it
 
 const ChartWrapper = styled.div`
     display: flex;
@@ -39,9 +40,18 @@ const VendorList = (props) => {
                     fontFamily: "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;",
                     background: `#${colors.dark}`,
                     fontSize: `24px`,
-                    color: 'white'
+                    color: 'white',
+                    [mq[0]]: {
+                        textAlign: 'center',
+                        justifyContent: 'center',
+                        fontSize: '14px'
+                    }
                 }}
-            ><span> Brides.il הנבחרת של</span></Card>
+            ><span
+                 css={{
+
+                 }}
+             > Brides.il הנבחרת של</span></Card>
 
             {props.vendors.edges.map(({node}) => (
                 <Card

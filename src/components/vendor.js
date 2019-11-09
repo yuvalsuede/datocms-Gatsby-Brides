@@ -1,9 +1,11 @@
 import React from "react"
 import styled from "@emotion/styled" // to take image data and render it
-import Card from "@material-ui/core/Card"
+import {css} from "@emotion/core" // to take image data and render it
 import Button from '@material-ui/core/Button';
 import colors from "../constants/colors"
 import Chip from '@material-ui/core/Chip';
+import {mq} from "../constants/dimensions";
+
 
 const Hashtags = (props) => {
     const tags = props.tags;
@@ -92,7 +94,14 @@ const Vendor = (props) => (
         height: '140px',
         margin: '10px 0',
         padding: '0 30px',
-        display: 'flex'
+        display: 'flex',
+        [mq[0]] : {
+            height: 'auto',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+            textAlign: 'center'
+        },
     }}>
         <VendorRight>
             <div
@@ -107,7 +116,14 @@ const Vendor = (props) => (
 
             <div css={{
                 display: 'flex',
-                flexDirection: 'row'
+                flexDirection: 'row',
+                [mq[0]] : {
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                },
+
             }}>
                 <Avatar
                     css={{
@@ -120,7 +136,13 @@ const Vendor = (props) => (
                     display: 'flex',
                     flexDirection: 'column',
                     marginRight: '50px',
-                    flexGrow: '1'
+                    flexGrow: '1',
+                    [mq[0]]: {
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        display: 'flex',
+                        margin: '10px 0 20px'
+                    }
                 }}>
                     <VendorDescription description={props.vendor.description}/>
                     <Hashtags
