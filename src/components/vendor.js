@@ -5,6 +5,7 @@ import Button from '@material-ui/core/Button';
 import colors from "../constants/colors"
 import Chip from '@material-ui/core/Chip';
 import {mq} from "../constants/dimensions";
+import Img from "gatsby-image";
 
 
 const Hashtags = (props) => {
@@ -45,15 +46,14 @@ const Avatar = (props) => {
             }}
         >
 
-            <img
+            <Img
+                fluid={props.fluid}
+                alt="Brides.il"
                 css={{
                     height: '100%',
                     width: 'auto',
                     objectFit: 'cover'
-                }}
-                src={props.path}
-                alt="avatar"
-            />
+                }}/>
         </div>
     )
 }
@@ -89,9 +89,10 @@ const VendorDescription = (props) => {
     </p>)
 }
 const Vendor = (props) => (
+
     <div css={{
         width: '100%',
-        height: '140px',
+        height: '200px',
         margin: '10px 0',
         padding: '0 30px',
         display: 'flex',
@@ -117,7 +118,8 @@ const Vendor = (props) => (
             <div css={{
                 display: 'flex',
                 flexDirection: 'row',
-                [mq[0]] : {
+                maxWidth: '500px',
+                    [mq[0]] : {
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'center',
@@ -130,7 +132,8 @@ const Vendor = (props) => (
                         width: '80px',
                         height: 'auto',
                     }}
-                    path={props.vendor.thumbnailImage.url}
+                    // path={props.vendor.thumbnailImage.url}
+                    fluid={props.vendor.thumbnailImage.fluid}
                 />
                 <div css={{
                     display: 'flex',

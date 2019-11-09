@@ -32,21 +32,9 @@ export const query = graphql`
                     mainLink
                     description
                     thumbnailImage {
-                        size
-                        width
-                        height
-                        path
-                        format
-                        isImage
-                        createdAt
-                        url
-                        notes
-                        author
-                        copyright
-                        originalId
-                        alt
-                        title
-                        customData
+                        fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
+                            ...GatsbyDatoCmsFluid
+                        }
                     }
                 }
             }
