@@ -97,10 +97,10 @@ const Vendor = (props) => (
         <VendorRight>
             <div
                 css={{
-                    color: '#1a86ba',
+                    color: `#${colors.dark}`,
                     fontSize: '16px',
+                    fontWeight: '100',
                     margin: '10px 0',
-                    fontWeight: '700'
                 }}
             >{props.vendor.name}
             </div>

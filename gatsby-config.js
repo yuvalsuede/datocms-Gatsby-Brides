@@ -2,7 +2,7 @@ require('dotenv').config()
 
 module.exports = {
   siteMetadata: {
-    title: `Creative Portfolio`,
+    title: `Brides.il | אתר הכלות של ישראל`,
   },
   plugins: [
     {

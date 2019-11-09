@@ -1,5 +1,6 @@
 //theme colors and tints (dark900 to normal500 to light100)
 const colors = {
+  'dark': '313131',
   '50': 'e3f3fa',
   '100': 'b9e0f2',
   '200': '8accea',

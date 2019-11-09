@@ -6,6 +6,7 @@ import LogoImg from "../assets/images/logo_transparent_background.png"
 import dimensions from "../constants/dimensions"
 import colors from "../constants/colors"
 import { SvgIcon } from "@material-ui/core"
+import Button from "@material-ui/core/Button";
 
 const HeaderContainer = styled.header`
   background: white;
@@ -100,8 +101,8 @@ const Header = ({ siteTitle }) => (
                 <Logo src={LogoImg} alt="Brides.il"/>
             </Link>
             <HeaderLinks>
-                {siteTitle}
-                <InstagramIcon />
+                <InstagramIcon onClick={() => navigateTo('https://www.instagram.com/brides.il')}
+                />
             </HeaderLinks>
         </HeaderContent>
     </HeaderContainer>
@@ -114,5 +115,11 @@ Header.propTypes = {
 Header.defaultProps = {
     siteTitle: ``,
 }
+
+const navigateTo = (url) => {
+
+    window.open(url);
+}
+
 
 export default Header

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import {StaticQuery, graphql} from "gatsby"
 import Header from "./header";
 import PageContainer from "./container";
+import Footer from "./footer";
 
 const WebsiteWrapper = ({children}) => (
     <StaticQuery query={graphql`
@@ -25,6 +26,7 @@ const WebsiteWrapper = ({children}) => (
                          <PageContainer>
                              {children}
                          </PageContainer>
+                         <Footer />
                      </>
                  )}
     />
