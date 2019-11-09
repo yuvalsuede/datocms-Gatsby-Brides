@@ -4,6 +4,7 @@ import {StaticQuery, graphql} from "gatsby"
 import Header from "./header";
 import PageContainer from "./container";
 import Footer from "./footer";
+import { HelmetDatoCms } from 'gatsby-source-datocms'
 
 const WebsiteWrapper = ({children}) => (
     <StaticQuery query={graphql`
