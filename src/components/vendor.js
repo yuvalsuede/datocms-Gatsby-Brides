@@ -101,14 +101,15 @@ const Vendor = (props) => (
             flexDirection: 'column',
             justifyContent: 'center',
             alignItems: 'center',
-            textAlign: 'center'
+            textAlign: 'center',
+            width: 'auto'
         },
     }}>
         <VendorRight>
             <div
                 css={{
                     color: `#${colors.dark}`,
-                    fontSize: '16px',
+                    fontSize: '20px',
                     fontWeight: '100',
                     margin: '10px 0',
                 }}
