@@ -2,6 +2,7 @@
 const dimensions = {
     //pixels
     minwidthDesktop: 900,
+    maxwidthDesktop: 1200,
     maxwidthTablet: 899,
     //ems
     paddingHorizontalDesktop: 4,
