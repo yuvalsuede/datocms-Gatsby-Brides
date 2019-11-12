@@ -38,7 +38,7 @@ exports.createPages = ({ graphql, actions }) => {
 
       result.data.allDatoCmsCategory.edges.map(({ node: category }) => {
         createPage({
-          path: `best/${category.slug}`,
+          path: `/${category.slug}`,
           component: path.resolve(`./src/templates/category.js`),
           context: {
             slug: category.slug,

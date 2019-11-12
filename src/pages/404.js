@@ -16,7 +16,7 @@ import { navigate } from 'gatsby';
 
 export default () => {
     useEffect(() => {
-        navigate('/best/makeup');
+        navigate('/makeup');
     }, []);
     return null;
 };
