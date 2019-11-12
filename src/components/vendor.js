@@ -17,17 +17,18 @@ const Hashtags = (props) => {
             {
                 tags.map((tag, index) => {
                     return (
-                        <Chip
+                        <span
                             key={`Key_${index}`}
-                            label={`#${tag}`}
                             clickable
                             color="primary"
                             css={{
                                 margin: '10px;',
-                                background: '#dd4fb1',
+                                color: '#dd4fb1',
                                 padding: '10px'
                             }}
-                        />
+                        >
+                            {`#${tag}`}
+                        </span>
                     )
                 })
             }
@@ -155,7 +156,7 @@ const Vendor = (props) => (
                             flexDirection: 'row',
                             flexGrow: '1'
                         }}
-                        tags={['הרבה המלצות', 'הרבה עוקבים']}
+                        tags={props.vendor.hashtags }
                     />
                 </div>
             </div>
@@ -179,28 +180,5 @@ const Vendor = (props) => (
     </div>
 )
 
-//
-// const useStyles = makeStyles({
-//     root: {
-//
-//         width: "100%",
-//         padding: "10px 30px",
-//         direction: "rtl",
-//         height: "50px",
-//         display: "flex",
-//         alignItems: "center",
-//         borderRadius: "0",
-//         fontFamily: "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;",
-//
-//     },
-//     rootSpan: {
-//         padding: "0 10px"
-//     },
-//     vendorCards: {
-//         direction: "rtl",
-//         marginBottom: '10px',
-//         borderRadius: '0'
-//     }
-// });
 
 export default Vendor

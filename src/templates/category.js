@@ -31,6 +31,7 @@ export const query = graphql`
                     position
                     mainLink
                     description
+                    hashtags
                     thumbnailImage {
                         fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
                             ...GatsbyDatoCmsFluid
