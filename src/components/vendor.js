@@ -180,7 +180,7 @@ const Vendor = (props) => (
                     variant="contained"
                     color="primary"
                     css={{
-                        background: `#$dd4fb1`,
+                        background: `#dd4fb1`,
                         height: '45px',
                         padding: '10px 30px',
                         fontSize: '16px'
