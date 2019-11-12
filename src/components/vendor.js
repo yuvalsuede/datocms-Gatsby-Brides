@@ -85,8 +85,7 @@ const VendorDescription = (props) => {
     return (<p css={{
         margin: '10px',
         fontSize: '14px',
-        color: 'black',
-        maxWidth: '90%'
+        color: 'black'
     }}>
         {props.description}
     </p>)
@@ -105,7 +104,9 @@ const Vendor = (props) => (
             justifyContent: 'center',
             alignItems: 'center',
             textAlign: 'center',
-            width: 'auto'
+            width: 'auto',
+            maxWidth: '90%',
+            margin: '0 auto'
         },
     }}>
         <VendorRight>
