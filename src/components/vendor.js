@@ -178,9 +178,10 @@ const Vendor = (props) => (
                     variant="contained"
                     color="primary"
                     css={{
-                        background: `#${colors[500]}`,
+                        background: `#$dd4fb1`,
                         height: '45px',
-                        padding: '10px 30px'
+                        padding: '10px 30px',
+                        fontSize: '16px'
 
                     }}>
                     לאתר <span></span>
