@@ -10,17 +10,17 @@ const ChartHeader = styled.div`
     --p: 15px;
     padding: 0 var(--p);
     position: relative;
-&:before,
-&:after {
-    background-color: inherit;
-    content: '';
-    display: block;
-    height: 100%;
-    position: absolute;
-    top: calc(var(--p)/2);
-    width: var(--p);
-    filter: brightness(.5);
-    z-index: -1;
+    &:before,
+    &:after {
+        background-color: inherit;
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        top: calc(var(--p)/2);
+        width: var(--p);
+        filter: brightness(.5);
+        z-index: -1;
 }
 
 &:before {
@@ -63,7 +63,7 @@ const VendorList = (props) => {
                 css={{
                     maxWidth: "800px",
                     width: "100%",
-                    padding: "10px 30px",
+                    padding: "10px 10px",
                     direction: "ltr",
                     height: "50px",
                     display: "flex",
