@@ -6,6 +6,7 @@ import colors from "../constants/colors"
 import Chip from '@material-ui/core/Chip';
 import {mq} from "../constants/dimensions";
 import Img from "gatsby-image";
+import {OutboundLink} from "gatsby-plugin-google-analytics";
 
 
 const Hashtags = (props) => {
@@ -163,19 +164,28 @@ const Vendor = (props) => (
 
         </VendorRight>
         <VendorLeft>
-            <Button
-                onClick={() => navigateTo(props.vendor.mainLink)}
-                variant="contained"
-                color="primary"
+            <OutboundLink
+                target="_blank"
+                href={props.vendor.mainLink}
                 css={{
-                    background: `#${colors[500]}`,
-                    height: '45px',
+                    textDecoration: 'none',
                     margin: '0 auto',
                     alignSelf: 'center',
-                    padding: '0 30px',
-                }}>
-                לאתר
-            </Button>
+                }}
+            >
+                <Button
+                    // onClick={() => navigateTo(props.vendor.mainLink)}
+                    variant="contained"
+                    color="primary"
+                    css={{
+                        background: `#${colors[500]}`,
+                        height: '45px',
+                        padding: '10px 30px'
+
+                    }}>
+                    לאתר <span></span>
+                </Button>
+            </OutboundLink>
         </VendorLeft>
     </div>
 )
