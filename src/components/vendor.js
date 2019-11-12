@@ -85,7 +85,8 @@ const VendorDescription = (props) => {
     return (<p css={{
         margin: '10px',
         fontSize: '14px',
-        color: 'black'
+        color: 'black',
+        maxWidth: '90%'
     }}>
         {props.description}
     </p>)
@@ -155,7 +156,8 @@ const Vendor = (props) => (
                         css={{
                             display: 'flex',
                             flexDirection: 'row',
-                            flexGrow: '1'
+                            flexGrow: '1',
+                            maxWidth: '90%'
                         }}
                         tags={props.vendor.hashtags }
                     />
