@@ -25,7 +25,8 @@ const Hashtags = (props) => {
                             css={{
                                 margin: '10px;',
                                 color: '#dd4fb1',
-                                padding: '10px'
+                                padding: '10px',
+                                wordWrap: 'break-word'
                             }}
                         >
                             {`#${tag}`}
