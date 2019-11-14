@@ -86,7 +86,8 @@ const VendorDescription = (props) => {
     return (<p css={{
         margin: '10px',
         fontSize: '14px',
-        color: 'black'
+        color: 'black',
+        padding: '0 20px'
     }}>
         {props.description}
     </p>)
