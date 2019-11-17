@@ -26,7 +26,8 @@ const Hashtags = (props) => {
                                 margin: '10px;',
                                 color: '#dd4fb1',
                                 padding: '10px',
-                                wordWrap: 'break-word'
+                                wordWrap: 'break-word',
+                                opacity: '0.5'
                             }}
                         >
                             {`#${tag}`}
@@ -93,7 +94,21 @@ const VendorDescription = (props) => {
     </p>)
 }
 const Vendor = (props) => (
-
+    <>
+    <div css={{
+        position: 'absolute',
+        border: '1px solid #e6e6e6',
+        width: '30px',
+        height: '30px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: '50%',
+        color: '#e6e6e6',
+        marginRight: '-38px',
+        marginTop: '20px',
+        background: 'white',
+    }}>{ props.vendor.position }</div>
     <div css={{
         width: '100%',
         height: '200px',
@@ -194,6 +209,7 @@ const Vendor = (props) => (
             </OutboundLink>
         </VendorLeft>
     </div>
+    </>
 )
 
 
