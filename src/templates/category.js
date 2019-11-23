@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 import WebsiteLayout from "../components/website-layout"
 import Hero from "../components/hero";
 import VendorList from "../components/vendor-list";
+import Article from "../components/article";
 
 export default ({ data }) => (
 
@@ -15,6 +16,9 @@ export default ({ data }) => (
             <VendorList
                 vendors={data.allDatoCmsVendor}
                 category={data.datoCmsCategory}
+            />
+            <Article
+                article={data.datoCmsCategory.mainArticle}
             />
         </>
     </WebsiteLayout>
@@ -48,6 +52,16 @@ export const query = graphql`
             cover {
                 fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
                     ...GatsbyDatoCmsFluid
+                }
+            }
+            mainArticle {
+                ... on DatoCmsTitleBlock {
+                    id
+                    mainTitle
+                }
+                ... on DatoCmsContent {
+                    id
+                    mainParagraph
                 }
             }
         }
