@@ -7,6 +7,7 @@ import Chip from '@material-ui/core/Chip';
 import {mq} from "../constants/dimensions";
 import Img from "gatsby-image";
 import {OutboundLink} from "gatsby-plugin-google-analytics";
+// import {mq} from "../constants/dimensions"; // to take image data and render it
 
 
 const Hashtags = (props) => {
@@ -14,27 +15,24 @@ const Hashtags = (props) => {
     console.log(tags);
 
     return (
-        <div>
-            {
-                tags.map((tag, index) => {
+        <div css={{
+            margin: '10px;',
+            color: '#dd4fb1',
+            padding: '10px',
+            wordWrap: 'break-word',
+            opacity: '0.5',
+            whiteSpace: 'pre'
+        }}>
+            <pre>{
+                tags.reduce((acc , tag ) => {
                     return (
-                        <span
-                            key={`Key_${index}`}
-                            clickable
-                            color="primary"
-                            css={{
-                                margin: '10px;',
-                                color: '#dd4fb1',
-                                padding: '10px',
-                                wordWrap: 'break-word',
-                                opacity: '0.5'
-                            }}
-                        >
-                            {`#${tag}`}
-                        </span>
+
+                            acc +  `   #${tag}`
+
                     )
-                })
+                }, '')
             }
+            </pre>
         </div>
     )
 }
@@ -108,6 +106,9 @@ const Vendor = (props) => (
         marginRight: '-38px',
         marginTop: '20px',
         background: 'white',
+        [mq[0]]: {
+            marginRight: '10px'
+        }
     }}>{ props.vendor.position }</div>
     <div css={{
         width: '100%',
