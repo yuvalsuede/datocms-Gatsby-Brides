@@ -1,5 +1,5 @@
 import React from "react"
-import Img from "gatsby-image"
+import Img from "gatsby-image/withIEPolyfill"
 import styled from "@emotion/styled" // to take image data and render it
 import dimensions, {mq} from "../constants/dimensions"
 
@@ -29,7 +29,8 @@ const HeroWrapper = styled.div`
 const ImgStyle = {
     width: '100%',
     height: '100%',
-    position: 'absolute'
+    position: 'absolute',
+
 }
 const Backdrop = styled.div`
   position: absolute;
@@ -64,7 +65,10 @@ const Hero = (props) => {
             <Img
                 fluid={props.fluid}
                 alt="Brides.il"
-                style={ ImgStyle } />
+                style={ ImgStyle }
+                // objectFit="scale-down"
+                objectPosition="50% 10%"
+            />
             <HeroHeader>
                 <h1
                 css={{

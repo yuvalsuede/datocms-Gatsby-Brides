@@ -27,8 +27,7 @@ const ArticleContent = styled.div`
 const Article = (props) => {
 
     console.log(props);
-    console.log(props.article[0].mainTitle);
-    return (
+    return (!props.article || !props.article[0]) ? '' : (
         <ArticleWrapper
             css={{
                 h2 : {
