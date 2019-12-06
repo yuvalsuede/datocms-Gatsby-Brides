@@ -109,7 +109,7 @@ const Vendor = (props) => (
         [mq[0]]: {
             marginRight: '10px'
         }
-    }}>{ props.vendor.position }</div>
+    }}>{ props.vendor.index + 1 }</div>
     <div css={{
         width: '100%',
         height: '200px',

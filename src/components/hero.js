@@ -67,7 +67,7 @@ const Hero = (props) => {
                 alt="Brides.il"
                 style={ ImgStyle }
                 // objectFit="scale-down"
-                objectPosition="50% 10%"
+                objectPosition="50% 50%"
             />
             <HeroHeader>
                 <h1

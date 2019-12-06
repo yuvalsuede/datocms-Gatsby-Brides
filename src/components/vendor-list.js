@@ -85,7 +85,7 @@ const VendorList = (props) => {
                 css={{}}
             > Brides.il הנבחרת של</span></ChartHeader>
 
-            {props.vendors.edges.map(({node}) => (
+            { props.vendors.edges.map( ({ node }, index) => (
                 <Card
                     key={node.slug}
                     raised={true}
@@ -102,9 +102,9 @@ const VendorList = (props) => {
 
                     }}
                 >
-                    <Vendor vendor={node}/>
+                    <Vendor vendor={ {...node, index} }/>
                 </Card>
-            ))}
+            )) }
         </ChartWrapper>
     )
 }
