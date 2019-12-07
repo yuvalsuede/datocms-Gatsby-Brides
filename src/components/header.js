@@ -5,8 +5,9 @@ import styled from "@emotion/styled"
 import LogoImg from "../assets/images/logo_transparent_background.png"
 import dimensions from "../constants/dimensions"
 import colors from "../constants/colors"
-import { SvgIcon } from "@material-ui/core"
+import {Menu, MenuItem, SvgIcon} from "@material-ui/core"
 import Button from "@material-ui/core/Button";
+import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 
 const HeaderContainer = styled.header`
   background: white;
@@ -94,19 +95,49 @@ const InstagramIcon = (props) => {
     )
 }
 
-const Header = ({ siteTitle }) => (
-    <HeaderContainer>
-        <HeaderContent>
-            <Link to="/">
-                <Logo src={LogoImg} alt="Brides.il"/>
-            </Link>
-            <HeaderLinks>
-                <InstagramIcon onClick={() => navigateTo('https://www.instagram.com/brides.il')}
-                />
-            </HeaderLinks>
-        </HeaderContent>
-    </HeaderContainer>
-)
+const Header = ({ siteTitle }) => {
+    const [anchorEl, setAnchorEl] = React.useState(null);
+    const handleClick = event => {
+        setAnchorEl(event.currentTarget);
+    };
+
+    const handleClose = (event) => {
+        setAnchorEl(null);
+        console.log(event.currentTarget)
+    };
+    return (
+        <HeaderContainer>
+            <HeaderContent>
+                <Link to="/">
+                    <Logo src={LogoImg} alt="Brides.il"/>
+                </Link>
+                <HeaderLinks>
+                    <>
+                        <ArrowDropDownIcon color="primary" fontSize="large" />
+                        <Button css={{
+                            margin: '0 20px'
+                        }} aria-controls="categories-menu" aria-haspopup="true" onClick={handleClick}>
+                            קטגוריות
+                        </Button>
+                        <Menu
+                            id="categories-menu"
+                            anchorEl={anchorEl}
+                            keepMounted
+                            open={Boolean(anchorEl)}
+                            onClose={handleClose}
+                        >
+                            <MenuItem onClick={handleClose}>איפור</MenuItem>
+                        </Menu>
+                    </>
+                    <InstagramIcon onClick={() => navigateTo('https://www.instagram.com/brides.il')}
+                    />
+
+                </HeaderLinks>
+            </HeaderContent>
+        </HeaderContainer>
+    )
+}
+
 
 Header.propTypes = {
     siteTitle: PropTypes.string,
