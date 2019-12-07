@@ -95,11 +95,16 @@ const InstagramIcon = (props) => {
     )
 }
 
-const Header = ({ siteTitle }) => {
+const Header = ({ siteTitle, categories }) => {
+    console.log(categories);
     const [anchorEl, setAnchorEl] = React.useState(null);
     const handleClick = event => {
         setAnchorEl(event.currentTarget);
     };
+
+    const handleLinkClick = event => {
+
+    }
 
     const handleClose = (event) => {
         setAnchorEl(null);
@@ -113,11 +118,11 @@ const Header = ({ siteTitle }) => {
                 </Link>
                 <HeaderLinks>
                     <>
-                        <ArrowDropDownIcon color="primary" fontSize="large" />
+
                         <Button css={{
                             margin: '0 20px'
                         }} aria-controls="categories-menu" aria-haspopup="true" onClick={handleClick}>
-                            קטגוריות
+                            <ArrowDropDownIcon style={{ color: '#dd4fb1'}}  fontSize="large" />קטגוריות
                         </Button>
                         <Menu
                             id="categories-menu"
@@ -126,7 +131,15 @@ const Header = ({ siteTitle }) => {
                             open={Boolean(anchorEl)}
                             onClose={handleClose}
                         >
-                            <MenuItem onClick={handleClose}>איפור</MenuItem>
+                            {
+                                categories.map(category => {
+                                    return (<MenuItem key={category.slug}
+                                                      component={Link}
+                                                      to={category.slug}
+                                                      onClick={handleLinkClick}>{ category.heName}</MenuItem>)
+                                })
+                            }
+
                         </Menu>
                     </>
                     <InstagramIcon onClick={() => navigateTo('https://www.instagram.com/brides.il')}

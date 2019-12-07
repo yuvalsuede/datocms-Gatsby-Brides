@@ -4,7 +4,7 @@ import {StaticQuery, graphql} from "gatsby"
 import Header from "./header";
 import PageContainer from "./container";
 import Footer from "./footer";
-import { HelmetDatoCms } from 'gatsby-source-datocms'
+import {HelmetDatoCms} from 'gatsby-source-datocms'
 import '../styles/index.sass'
 
 const WebsiteWrapper = ({children}) => (
@@ -19,16 +19,28 @@ const WebsiteWrapper = ({children}) => (
           ...GatsbyDatoCmsFaviconMetaTags
         }
       }
+      allDatoCmsCategory {
+        nodes {
+          name
+          slug
+          heName
+        }
+      }
    
     }
+
+    
   `}
                  render={data => (
                      <>
-                         <Header siteTitle={data.datoCmsSite.globalSeo.siteName}/>
+                         <Header
+                             siteTitle={data.datoCmsSite.globalSeo.siteName}
+                             categories={data.allDatoCmsCategory.nodes}
+                         />
                          <PageContainer>
                              {children}
                          </PageContainer>
-                         <Footer />
+                         <Footer/>
                      </>
                  )}
     />
