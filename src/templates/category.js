@@ -26,7 +26,7 @@ export default ({ data }) => (
 
 export const query = graphql`
     query CategoryQuery($slug: String!) {
-        allDatoCmsVendor(sort: {order: ASC, fields: position}, filter: {category: {slug: {eq: $slug}}}) {
+        allDatoCmsVendor(sort: {order: ASC, fields: position}, filter: {category: {elemMatch: {slug: {eq: $slug}}}}) {
             edges {
                 node {
                     id
