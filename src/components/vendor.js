@@ -135,7 +135,19 @@ const Vendor = (props) => (
                     fontWeight: '100',
                     margin: '10px 0',
                 }}
-            >{props.vendor.name}
+            >
+                <OutboundLink
+                    target="_blank"
+                    href={props.vendor.mainLink}
+                    css={{
+                        textDecoration: 'none',
+                        margin: '0 auto',
+                        alignSelf: 'center',
+                        color: 'inherit'
+                    }}
+                >
+                    {props.vendor.name}
+                </OutboundLink>
             </div>
 
             <div css={{
