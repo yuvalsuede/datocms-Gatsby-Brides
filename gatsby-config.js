@@ -28,8 +28,23 @@ module.exports = {
       resolve: `gatsby-source-datocms`,
       options: {
         apiToken: process.env.DATO_API_TOKEN,
+        previewMode: true,
+        disableLiveReload: false,
       },
 
+    },
+    {
+      resolve: `gatsby-source-instagram`,
+      options: {
+        username: `brides.il`,
+      },
+    },
+    {
+      resolve: "@horacioh/gatsby-theme-instagram",
+      options: {
+        type: `account`,
+        username: "brides.il",
+      },
     },
 
   ],

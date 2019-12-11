@@ -4,8 +4,8 @@ import {StaticQuery, graphql} from "gatsby"
 import Header from "./header";
 import PageContainer from "./container";
 import Footer from "./footer";
-import {HelmetDatoCms} from 'gatsby-source-datocms'
 import '../styles/index.sass'
+import IG from './instagram-grid';
 
 const WebsiteWrapper = ({children}) => (
     <StaticQuery query={graphql`
@@ -40,6 +40,7 @@ const WebsiteWrapper = ({children}) => (
                          <PageContainer>
                              {children}
                          </PageContainer>
+                         <IG />
                          <Footer/>
                      </>
                  )}
