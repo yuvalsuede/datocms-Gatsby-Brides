@@ -21,7 +21,12 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-styled-components`,
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        minify: false, // Breaks styles if not set to false
+      },
+    },
     `gatsby-plugin-sass`,
     `gatsby-transformer-remark`,
     {

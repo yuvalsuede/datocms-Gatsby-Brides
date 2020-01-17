@@ -5,6 +5,7 @@ import { StaticQuery, graphql } from "gatsby"
 import { HelmetDatoCms } from 'gatsby-source-datocms'
 
 import '../styles/index.sass'
+import ResetCss from "../styles/resetCSS";
 
 const TemplateWrapper = ({ children }) => (
   <StaticQuery query={graphql`
@@ -40,6 +41,8 @@ const TemplateWrapper = ({ children }) => (
     }
   `}
   render={data => (
+      <>
+        <ResetCss />
     <div className="container">
       <HelmetDatoCms
         favicon={data.datoCmsSite.faviconMetaTags}
@@ -91,6 +94,7 @@ const TemplateWrapper = ({ children }) => (
         {children}
       </div>
     </div>
+      </>
     )}
   />
 )

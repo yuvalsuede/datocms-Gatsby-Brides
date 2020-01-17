@@ -6,6 +6,7 @@ import PageContainer from "./container";
 import Footer from "./footer";
 import '../styles/index.sass'
 import IG from './instagram-grid';
+import ResetCss from "../styles/resetCSS";
 
 const WebsiteWrapper = ({children}) => (
     <StaticQuery query={graphql`
@@ -33,6 +34,7 @@ const WebsiteWrapper = ({children}) => (
   `}
                  render={data => (
                      <>
+                         <ResetCss />
                          <Header
                              siteTitle={data.datoCmsSite.globalSeo.siteName}
                              categories={data.allDatoCmsCategory.nodes}
@@ -40,7 +42,7 @@ const WebsiteWrapper = ({children}) => (
                          <PageContainer>
                              {children}
                          </PageContainer>
-                         <IG />
+                         {/*<IG />*/}
                          <Footer/>
                      </>
                  )}

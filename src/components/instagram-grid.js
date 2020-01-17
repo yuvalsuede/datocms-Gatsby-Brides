@@ -11,8 +11,6 @@ export default () => (
             background: 'none !important'
         }
     }}>
-        <InstagramGrid card={SimpleCard} css={{
-
-        }}/>
+        <InstagramGrid card={SimpleCard}/>
     </div>
 )
