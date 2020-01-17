@@ -10,6 +10,7 @@ export const PostPreview = styled.div`
   margin-bottom: 45px;
   margin-top: 30px;
   position: relative;
+  
   img {
     border-radius: 3px;
   }
@@ -25,9 +26,43 @@ export const PostPreview = styled.div`
     filter: blur(15px);
   }
 `;
+export const PostPreviewNew = styled.div`
+  margin-bottom: 45px;
+  margin-top: 30px;
+  position: relative;
+  
+  > div {
+    border-radius: 3px;
+    width: 100px;
+    height: 100px;
+  }
+
+   @media (max-width: 575px) {
+      > div {
+      width: 100%;
+      height: auto;
+      }
+      
+    }
+  &:before {
+    content: '';
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    background-color: #757575;
+    bottom: 0;
+    left: 10%;
+    filter: blur(15px);
+  }
+`;
+
 
 export const PostDetails = styled.div`
   display: flex;
+  @media (max-width: 575px) {
+      flex-direction: column;
+
+  }
 `;
 
 export const PostDate = styled.div`

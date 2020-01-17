@@ -5,6 +5,7 @@ import Img from "gatsby-image"
 import {
   PostCardWrapper,
   PostPreview,
+  PostPreviewNew,
   PostDetails,
   PostDate,
   PostTitle,
@@ -96,17 +97,13 @@ const PostCard = ({
             </PostTags>
           )}
         </PostContent>
-        <PostPreview className="post_preview">
+        <PostPreviewNew className="post_preview">
           <Img
               fluid={image.fluid}
               alt="post preview"
               backgroundColor={placeholderBG}
-              css={{
-                width: '100px',
-                height: '100px',
-              }}
           />
-        </PostPreview>
+        </PostPreviewNew>
       </PostDetails>
     </PostCardWrapper>
   )
