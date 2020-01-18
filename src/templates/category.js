@@ -4,6 +4,7 @@ import WebsiteLayout from "../components/website-layout"
 import Hero from "../components/hero";
 import VendorList from "../components/vendor-list";
 import Article from "../components/article";
+import Iframe from 'react-iframe'
 
 export default ({ data }) => (
 
@@ -17,6 +18,24 @@ export default ({ data }) => (
                 vendors={data.allDatoCmsVendor}
                 category={data.datoCmsCategory}
             />
+            <Iframe
+                css={{
+                    position: 'relative',
+                    display: 'initial',
+                    width: '100%',
+                    maxWidth: '600px',
+                    margin: '0 auto',
+                    marginTop: '50px',
+                    border: 0,
+                }}
+                url="https://www.opinionstage.com/api/v1/widgets/605692/iframe"
+                    width="100%"
+                    height="607px"
+                    id="myId"
+                    className="myClassname"
+                    display="initial"
+                    allowFullScreen
+                    position="relative"/>
             <Article
                 article={data.datoCmsCategory.mainArticle}
             />
