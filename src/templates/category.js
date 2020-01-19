@@ -14,6 +14,25 @@ export default ({ data }) => (
                 topDescription={data.datoCmsCategory.topDescription}
                 topLongDescription={data.datoCmsCategory.topLongDescription}
                 fluid={data.datoCmsCategory.cover.fluid} />
+            <Iframe
+                css={{
+                    position: 'relative',
+                    display: 'initial',
+                    width: '100%',
+                    maxWidth: '600px',
+                    margin: '0 auto',
+                    marginTop: '50px',
+                    marginBottom: '50px',
+                    border: 0,
+                }}
+                url="https://www.opinionstage.com/api/v1/widgets/605692/iframe"
+                width="100%"
+                height="607px"
+                id="myId"
+                className="myClassname"
+                display="initial"
+                allowFullScreen
+                position="relative"/>
             <VendorList
                 vendors={data.allDatoCmsVendor}
                 category={data.datoCmsCategory}
