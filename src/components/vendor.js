@@ -162,14 +162,26 @@ const Vendor = (props) => (
                 },
 
             }}>
-                <Avatar
+                <OutboundLink
+                    target="_blank"
+                    href={props.vendor.mainLink}
                     css={{
-                        width: '80px',
-                        height: 'auto',
+                        textDecoration: 'none',
+                        margin: '0 auto',
+                        alignSelf: 'center',
+                        color: 'inherit'
                     }}
-                    // path={props.vendor.thumbnailImage.url}
-                    fluid={props.vendor.thumbnailImage.fluid}
-                />
+                >
+                    <Avatar
+                        css={{
+                            width: '80px',
+                            height: 'auto',
+                        }}
+                        // path={props.vendor.thumbnailImage.url}
+                        fluid={props.vendor.thumbnailImage.fluid}
+                    />
+                </OutboundLink>
+
                 <div css={{
                     display: 'flex',
                     flexDirection: 'column',

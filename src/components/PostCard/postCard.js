@@ -2,6 +2,7 @@ import * as React from "react"
 import { Link } from "gatsby"
 import _ from "lodash"
 import Img from "gatsby-image"
+import Button from '@material-ui/core/Button';
 import {
   PostCardWrapper,
   PostPreview,
@@ -74,7 +75,20 @@ const PostCard = ({
                 target="_blank"
                 href={url}
             >
-              {title}
+              {title} <Button
+                // onClick={() => navigateTo(props.vendor.mainLink)}
+                variant="contained"
+                color="primary"
+                css={{
+                  background: `#dd4fb1`,
+                  height: '30px',
+                  padding: '0',
+                  fontSize: '16px',
+                  margin: '0 20px'
+
+                }}>
+              לאתר <span></span>
+            </Button>
             </OutboundLink>
           </PostTitle>
 
@@ -97,13 +111,20 @@ const PostCard = ({
             </PostTags>
           )}
         </PostContent>
+        <OutboundLink
+            target="_blank"
+            href={url}
+        >
         <PostPreviewNew className="post_preview">
+
           <Img
               fluid={image.fluid}
               alt="post preview"
               backgroundColor={placeholderBG}
           />
         </PostPreviewNew>
+        </OutboundLink>
+
       </PostDetails>
     </PostCardWrapper>
   )
