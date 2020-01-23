@@ -145,7 +145,7 @@ export const RelatedPostItem = styled.div`
 `
 export const TagPostsWrapper = styled.div`
   margin: 0 auto;
-  padding-top: 120px;
+  padding-top: 20px;
   position: relative;
   @media (min-width: 990px) {
     width: 900px;

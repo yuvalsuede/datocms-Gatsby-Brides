@@ -22,7 +22,6 @@ export default ({ data }) => (
                     maxWidth: '600px',
                     margin: '0 auto',
                     marginTop: '50px',
-                    marginBottom: '50px',
                     border: 0,
                 }}
                 url="https://www.opinionstage.com/api/v1/widgets/605692/iframe"
