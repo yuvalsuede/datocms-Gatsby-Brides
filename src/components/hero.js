@@ -76,7 +76,7 @@ const Hero = (props) => {
                     [mq[0]]: {
                         textAlign: 'center',
                         justifyContent: 'center',
-                        fontSize: '20px !important'
+                        fontSize: '40px !important'
                     }
                 }}
                 >{props.topDescription}</h1>
@@ -85,7 +85,7 @@ const Hero = (props) => {
                         [mq[0]]: {
                             textAlign: 'center',
                             justifyContent: 'center',
-                            fontSize: '14px !important',
+                            fontSize: '24px !important',
                             width: '50%',
                             margin: '0 auto'
                         }

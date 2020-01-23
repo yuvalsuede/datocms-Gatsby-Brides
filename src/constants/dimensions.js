@@ -11,7 +11,7 @@ const dimensions = {
 
 }
 
-const breakpoints = [900]
+const breakpoints = [dimensions.minwidthDesktop]
 
 export const mq = breakpoints.map(
     bp => `@media (max-width: ${bp}px)`
