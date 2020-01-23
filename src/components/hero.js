@@ -9,8 +9,9 @@ const HeroWrapper = styled.div`
   max-width: ${dimensions.maxwidthDesktop}px;
   width: 100%;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
   margin: 0 auto;
   position: relative;
   direction: rtl;
@@ -46,7 +47,6 @@ const Backdrop = styled.div`
 
 const HeroHeader = styled.div`
   position: relative;
-  height: 100%;
   z-index: 11;
   color: white;
   width: 100%;
@@ -55,13 +55,43 @@ const HeroHeader = styled.div`
   padding: 50px 0 0;
 `
 
+export const HeroContent = styled.div`
+  margin: 0 auto;
+  width: 100%;
+
+  @media (min-width: 991px) {
+    width: 900px;
+  }
+  @media (min-width: 1200px) {
+    width: 1170px;
+  }
+
+  @media (max-width: 990px) {
+    padding-left: 45px;
+  }
+
+  @media (max-width: 767px) {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+`
+
+const HeroInner = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+`
 
 
-const Hero = (props) => {
+const Hero = ({children, ...props}) => {
 
+    console.log(children);
     console.log(props);
     return (
-        <HeroWrapper>
+        <HeroWrapper className="hero-wrapper">
             <Backdrop />
             <Img
                 fluid={props.fluid}
@@ -70,6 +100,7 @@ const Hero = (props) => {
                 // objectFit="scale-down"
                 objectPosition="50% 50%"
             />
+            <HeroInner>
             <HeroHeader>
                 <h1
                 css={{
@@ -80,7 +111,7 @@ const Hero = (props) => {
                     }
                 }}
                 >{props.topDescription}</h1>
-                <h2
+                { props.topLongDescription ? (<h2
                     css={{
                         [mq[0]]: {
                             textAlign: 'center',
@@ -90,9 +121,13 @@ const Hero = (props) => {
                             margin: '0 auto'
                         }
                     }}
-                >{props.topLongDescription}</h2>
+                >{props.topLongDescription}</h2>)  : ''}
             </HeroHeader>
 
+            <HeroContent>
+                {children}
+            </HeroContent>
+            </HeroInner>
         </HeroWrapper>
     )
 }
