@@ -4,7 +4,8 @@ import styled from "@emotion/styled" // to take image data and render it
 import dimensions, {mq} from "../constants/dimensions"
 
 const HeroWrapper = styled.div`
-  height: 300px;
+  height: 100vh;
+  max-height: 600px;
   max-width: ${dimensions.maxwidthDesktop}px;
   width: 100%;
   display: flex;

@@ -10,9 +10,8 @@ const VendorList = (props) => {
     return (
         <TagPostsWrapper>
         <TagPageHeading>
-            <TagName>Brides.il</TagName>
+            {/*<TagName>Brides.il</TagName>*/}
         </TagPageHeading>
-
             {props.vendors.edges.map(({ node }, index ) => (
                 <PostCard
                     key={node.slug}

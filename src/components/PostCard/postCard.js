@@ -98,21 +98,27 @@ const PostCard = ({
             </PostTags>
           )}
           <div>
-            <Button
-                // onClick={() => navigateTo(props.vendor.mainLink)}
-                variant="contained"
-                color="primary"
-                css={{
-                  background: `#dd4fb1`,
-                  height: '30px',
-                  padding: '0',
-                  fontSize: '16px',
-                  margin: '0 20px',
-                  marginTop: '30px',
+            <OutboundLink
+                target="_blank"
+                href={url}
+            >
+              <Button
+                  // onClick={() => navigateTo(props.vendor.mainLink)}
+                  variant="contained"
+                  color="primary"
+                  css={{
+                    background: `#dd4fb1`,
+                    height: '30px',
+                    padding: '0',
+                    fontSize: '16px',
+                    margin: '0 20px',
+                    marginTop: '30px',
 
-                }}>
-              לאתר <span></span>
-            </Button>
+                  }}>
+                לאתר
+              </Button>
+            </OutboundLink>
+
           </div>
         </PostContent>
         <OutboundLink
