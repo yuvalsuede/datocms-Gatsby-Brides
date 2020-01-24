@@ -52,7 +52,7 @@ const FeaturedPost = ({
         <PostTitle2 className="post_title">
           <Link
           css={{
-            color: '#9055a2 !important' ,
+            color: '#dd4fb1 !important' ,
             margin: '0 20px',
           }}
               to={url}>{title}</Link>

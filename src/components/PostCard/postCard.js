@@ -41,8 +41,9 @@ const PostCard = ({
     <PostCardWrapper className={addAllClasses.join(" ")} {...props}>
       {image == null ? null : (
         <PostPreview className="post_preview">
-          <Link to={url}>
-            {imageType === "fluid" ? (
+          <Link to={url}
+                key={url}>
+            {imageType && imageType === "fluid" ? (
               <Img
                 fluid={image}
                 alt="post preview"

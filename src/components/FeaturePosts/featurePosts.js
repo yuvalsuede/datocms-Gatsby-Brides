@@ -55,26 +55,11 @@ const FeaturePostsContainer = () => {
         {categories.map(({ node }) => {
             const title = node.heName;
             //Random Placeholder Color
-            const placeholderColors = [
-                "#55efc4",
-                "#81ecec",
-                "#74b9ff",
-                "#a29bfe",
-                "#ffeaa7",
-                "#fab1a0",
-                "#e17055",
-                "#0984e3",
-                "#badc58",
-                "#c7ecee",
-            ];
-            const setColor =
-                placeholderColors[
-                    Math.floor(Math.random() * placeholderColors.length)
-                    ]
 
+            console.log(node.heName);
             return (
                 <FeaturePost
-                    key={node.name}
+                    key={node.heName}
                     title={title}
                     image={
                         node.cover == null
