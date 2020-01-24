@@ -8,10 +8,10 @@ import { TagPostsWrapper, TagPageHeading, TagName } from  "../templates/template
 const VendorList = (props) => {
     return (
         <TagPostsWrapper>
-        <TagPageHeading>
-            <TagName>#{props.tag}</TagName>
+            {props.tag ? (<TagPageHeading>
+             (<TagName>#{props.tag}</TagName>)
             {`הנבחרת שלנו לכלות`}
-        </TagPageHeading>
+        </TagPageHeading>) : ''}
             {props.vendors.edges.map(({ node }, index ) => (
                 <PostCard
                     key={node.slug}
