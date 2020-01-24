@@ -2,13 +2,15 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import WebsiteLayout from "../components/website-layout"
 import VendorList from "../components/vendor-list";
+import { TagPageHeading, TagName } from  "../templates/templates.style";
 
-export default ({ data }) => {
-    console.log(data);
+export default ({ data, pageContext }) => {
+
     return (<WebsiteLayout>
         <>
             <VendorList
                 vendors={data.allDatoCmsVendor}
+                tag={pageContext.tag}
             />
         </>
     </WebsiteLayout>)

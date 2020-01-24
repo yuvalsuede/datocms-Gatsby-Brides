@@ -6,11 +6,11 @@ import { TagPostsWrapper, TagPageHeading, TagName } from  "../templates/template
 
 
 const VendorList = (props) => {
-    console.log(props);
     return (
         <TagPostsWrapper>
         <TagPageHeading>
-            {/*<TagName>Brides.il</TagName>*/}
+            <TagName>#{props.tag}</TagName>
+            {`הנבחרת שלנו לכלות`}
         </TagPageHeading>
             {props.vendors.edges.map(({ node }, index ) => (
                 <PostCard
