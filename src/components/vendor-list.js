@@ -9,7 +9,7 @@ const VendorList = (props) => {
     return (
         <TagPostsWrapper>
             {props.tag ? (<TagPageHeading>
-             (<TagName>#{props.tag}</TagName>)
+                <TagName>#{props.tag}</TagName>
             {`הנבחרת שלנו לכלות`}
         </TagPageHeading>) : ''}
             {props.vendors.edges.map(({ node }, index ) => (
