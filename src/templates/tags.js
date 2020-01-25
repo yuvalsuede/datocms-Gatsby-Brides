@@ -2,7 +2,6 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import WebsiteLayout from "../components/website-layout"
 import VendorList from "../components/vendor-list";
-import { TagPageHeading, TagName } from  "../templates/templates.style";
 
 export default ({ data, pageContext }) => {
 

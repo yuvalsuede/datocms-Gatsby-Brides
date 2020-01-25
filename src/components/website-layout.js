@@ -42,7 +42,8 @@ const WebsiteWrapper = ({children}) => (
                          <PageContainer>
                              {children}
                          </PageContainer>
-                         {/*<IG />*/}
+
+                         <div className="addthis_horizontal_follow_toolbox"></div>
                          <Footer/>
                      </>
                  )}

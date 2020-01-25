@@ -3,15 +3,16 @@ import colors from "../constants/colors";
 import {mq} from "../constants/dimensions";
 import PostCard from "./PostCard/postCard"; // to take image data and render it
 import { TagPostsWrapper, TagPageHeading, TagName } from  "../templates/templates.style";
+import SectionHead from "./SectionHead/sectionHead";
+import _ from "lodash"
 
 
-const VendorList = (props) => {
+const VendorList = ({name, ...props}) => {
+    const title = name || props.tag ?  `#${props.tag}` : _.get(props,'category.heName');
     return (
+
         <TagPostsWrapper>
-            {props.tag ? (<TagPageHeading>
-                <TagName>#{props.tag}</TagName>
-            {`הנבחרת שלנו לכלות`}
-        </TagPageHeading>) : ''}
+            <SectionHead>{title}</SectionHead>
             {props.vendors.edges.map(({ node }, index ) => (
                 <PostCard
                     key={node.slug}
@@ -23,6 +24,7 @@ const VendorList = (props) => {
                     image={node.thumbnailImage}
                 />
             ))}
+
         </TagPostsWrapper>
     )
 }

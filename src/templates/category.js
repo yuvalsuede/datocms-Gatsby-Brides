@@ -5,6 +5,7 @@ import Hero from "../components/hero";
 import VendorList from "../components/vendor-list";
 import Article from "../components/article";
 import Iframe from 'react-iframe'
+import PageContainer from "../components/container";
 
 export default ({ data }) => (
 
@@ -39,6 +40,7 @@ export default ({ data }) => (
             <Article
                 article={data.datoCmsCategory.mainArticle}
             />
+
         </>
     </WebsiteLayout>
 )
@@ -65,6 +67,7 @@ export const query = graphql`
         }
         datoCmsCategory(slug: { eq: $slug }) {
             name
+            heName
             slug
             topDescription
             topLongDescription

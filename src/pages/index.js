@@ -15,7 +15,9 @@ export default ({ data }) => {
                     fluid={data.allDatoCmsHome.nodes[0].coverImage.fluid}
                     children={ <FeaturePostsContainer /> }
                 />
+
             </>
+
         </WebsiteLayout>
         )
 
